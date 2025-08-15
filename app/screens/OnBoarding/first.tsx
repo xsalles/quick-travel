@@ -4,6 +4,6 @@ import { onBoardingData } from "./data";
 
 export default function FirstOnBoarding() {
   return (
-      <OnBoardingPage {...onBoardingData[1]}/>
+      <OnBoardingPage {...onBoardingData[2]}/>
   );
 }
