@@ -20,7 +20,7 @@ const variants = {
 
 export default function Button({...props}: ButtonsProps) {
   return (
-    <Pressable onPress={() => props.action} className={`${variants.size.default} ${variants.colors[props.colorVariant]}`}>
+    <Pressable onPress={props.action} className={`${variants.size.default} ${variants.colors[props.colorVariant]}`}>
         <Text className={`${variants.colors[props.colorVariant]} ${variants.font.default}`}>{props.text}</Text>
     </Pressable>
   )

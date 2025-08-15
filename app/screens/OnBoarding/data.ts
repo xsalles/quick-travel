@@ -10,9 +10,6 @@ export const onBoardingData: OnBoardingProps[] = [
         lineDirection: "left",
         image: AirPlane,
         buttonText: "Próximo",
-        buttonAction: () => {
-            console.log("Próximo passo")
-        }
     },
     {
         title: "Hóteis e voos de ótima qualidade!",
@@ -26,5 +23,6 @@ export const onBoardingData: OnBoardingProps[] = [
         description: "Nós podemos te ajudar a descobrir os lugares mais bonitos do mundo!",
         buttonText: "Começar",
         image: TravelBooking,
+        lineDirection: "right",
     }
 ]

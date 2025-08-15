@@ -8,8 +8,6 @@ import LineLeft from "../../assets/images/elements/lineLeft.svg";
 import LineRight from "../../assets/images/elements/lineRight.svg";
 import { renderImage } from "@/helpers/renderImage";
 import Button from "@/components/Button";
-import { useFonts } from "expo-font";
-import {} from "@expo-google-fonts/poppins";
 
 export default function OnBoardingPage({ ...props }: OnBoardingProps) {
   return (
@@ -17,7 +15,13 @@ export default function OnBoardingPage({ ...props }: OnBoardingProps) {
       <LogoText style={{ marginTop: 52 }} />
 
       <View className="relative flex-1 w-full justify-center items-center">
-        <View style={{ position: 'absolute', top: '14%' ,left: 0, right: 0, zIndex: 1 }}>
+        <View style={{
+          position: 'absolute',
+          bottom: props.lineDirection === "left" ? "22.2%" : undefined,
+          left: 0,
+          right: 0,
+          zIndex: 1
+        }}>
           {props.lineDirection === "left" ? (
             <LineLeft />
           ) : props.lineDirection === "center" ? (
@@ -43,24 +47,7 @@ export default function OnBoardingPage({ ...props }: OnBoardingProps) {
 
         <Button text={props.buttonText} action={() => props.buttonAction} colorVariant="secondary" />
 
-        <View
-          className={`flex-row ${
-            props.lineDirection === "center"
-              ? "justify-between"
-              : "justify-center"
-          } items-center text-center w-full h-fit`}
-        >
-          {props.lineDirection === "left" ? (
-            <Text className="underline text-white font-poppins">Pular</Text>
-          ) : props.lineDirection === "center" ? (
-            <>
-              <Text className="underline text-white font-poppins">Pular</Text>
-              <Text className="underline text-white font-poppins">Voltar</Text>
-            </>
-          ) : (
-            <Text className="underline text-white font-poppins">Voltar</Text>
-          )}
-        </View>
+        
       </View>
     </SafeAreaView>
   );
