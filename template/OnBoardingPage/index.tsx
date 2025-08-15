@@ -34,14 +34,14 @@ export default function OnBoardingPage({ ...props }: OnBoardingProps) {
       </View>
 
       <View className="flex-col px-12 w-full gap-6 items-center bg-black rounded-t-2xl py-8">
-        <Text className="text-white text-2xl font-poppins-semibold">
+        <Text className="text-white text-2xl font-poppins-semibold text-center">
           {props.title}
         </Text>
         <Text className="text-white text-center text-base font-poppins">
           {props.description}
         </Text>
 
-        <Button text={props.buttonText} colorVariant="primary" />
+        <Button text={props.buttonText} action={() => props.buttonAction} colorVariant="secondary" />
 
         <View
           className={`flex-row ${

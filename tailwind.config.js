@@ -10,7 +10,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#04203D"
+        primary: "#04203D",
+        secondary: "#0162E3",
       },
       fontFamily: {
         'poppins': 'poppins-regular',

@@ -1,5 +1,6 @@
 import { OnBoardingProps } from "@/interfaces/template/OnBoarding";
 import AirPlane from "../../../assets/images/illustrations/airplane.svg"
+import Buildings from "../../../assets/images/illustrations/buildings.svg"
 
 export const onBoardingData: OnBoardingProps[] = [
     {
@@ -11,5 +12,19 @@ export const onBoardingData: OnBoardingProps[] = [
         buttonAction: () => {
             console.log("Próximo passo")
         }
+    },
+    {
+        title: "Hóteis e voos de ótima qualidade!",
+        description: "Os melhores Hóteis e Voos com ótimos atendimentos.",
+        buttonText: "Próximo",
+        image: Buildings,
+        lineDirection: "center",
+    },
+    {
+        title: "Hóteis e voos de ótima qualidade!",
+        description: "Os melhores Hóteis e Voos com ótimos atendimentos.",
+        buttonText: "Próximo",
+        image: Buildings,
+        lineDirection: "center",
     }
 ]
