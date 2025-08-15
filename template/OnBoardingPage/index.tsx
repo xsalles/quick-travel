@@ -1,40 +1,65 @@
-import { View, Text, Pressable } from "react-native";
-import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
-import LogoText from "../../../assets/images/icons/logo+text.svg";
 import { OnBoardingProps } from "@/interfaces/template/OnBoarding";
-import LineLeft from "../../assets/images/elements/lineLeft.svg";
+import React from "react";
+import { Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import LogoText from "../../assets/images/icons/logo+text.svg";
 import LineCenter from "../../assets/images/elements/lineCenter.svg";
+import LineLeft from "../../assets/images/elements/lineLeft.svg";
 import LineRight from "../../assets/images/elements/lineRight.svg";
+import { renderImage } from "@/helpers/renderImage";
+import Button from "@/components/Button";
+import { useFonts } from "expo-font";
+import {} from "@expo-google-fonts/poppins";
 
 export default function OnBoardingPage({ ...props }: OnBoardingProps) {
   return (
-    <SafeAreaView className="flex-1 flex flex-col items-center bg-primary">
+    <SafeAreaView className="flex-1 flex flex-col items-center bg-primary justify-between ">
       <LogoText style={{ marginTop: 52 }} />
 
-      <View className="relative first:z-10 last:z-20">
-        {props.lineDirection === "left" ? (
-          <LineLeft className="absolute" />
-        ) : props.lineDirection === "center" ? (
-          <LineCenter className="absolute" />
-        ) : (
-          <LineRight className="absolute" />
-        )}
+      <View className="relative flex-1 w-full justify-center items-center">
+        <View style={{ position: 'absolute', top: '14%' ,left: 0, right: 0, zIndex: 1 }}>
+          {props.lineDirection === "left" ? (
+            <LineLeft />
+          ) : props.lineDirection === "center" ? (
+            <LineCenter />
+          ) : (
+            <LineRight />
+          )}
+        </View>
 
-        {props.image}
+        {/* Airplane in foreground */}
+        <View style={{ zIndex: 10, position: 'relative' }}>
+          {renderImage(props)}
+        </View>
       </View>
 
-      <View className="flex-1 flex-col px-12 w-full items-center gap-6 bg-black rounded-t-2xl pt-8">
-        <Text>{props.title}</Text>
-        <Text>{props.description}</Text>
+      <View className="flex-col px-12 w-full gap-6 items-center bg-black rounded-t-2xl py-8">
+        <Text className="text-white text-2xl font-poppins-semibold">
+          {props.title}
+        </Text>
+        <Text className="text-white text-center text-base font-poppins">
+          {props.description}
+        </Text>
 
+        <Button text={props.buttonText} colorVariant="primary" />
 
-
-        <Pressable className="">{props.buttonText}</Pressable>
-
-        <View className="flex flex-row justify-between w-full">
-          <Text className="underline">Voltar</Text>
-          <Text className="underline">Pular</Text>
+        <View
+          className={`flex-row ${
+            props.lineDirection === "center"
+              ? "justify-between"
+              : "justify-center"
+          } items-center text-center w-full h-fit`}
+        >
+          {props.lineDirection === "left" ? (
+            <Text className="underline text-white font-poppins">Pular</Text>
+          ) : props.lineDirection === "center" ? (
+            <>
+              <Text className="underline text-white font-poppins">Pular</Text>
+              <Text className="underline text-white font-poppins">Voltar</Text>
+            </>
+          ) : (
+            <Text className="underline text-white font-poppins">Voltar</Text>
+          )}
         </View>
       </View>
     </SafeAreaView>

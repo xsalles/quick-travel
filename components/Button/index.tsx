@@ -14,7 +14,7 @@ const variants = {
         tertiary: 'bg-tertiary text-black',
     },
     font: {
-        default: "font-semibold",
+        default: "font-poppins-semibold",
     }
 };
 

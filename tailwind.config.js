@@ -4,12 +4,18 @@ module.exports = {
   content: [
     "./app/**/*.{js,jsx,ts,tsx}",
     "./app/*.{js,jsx,ts,tsx}",
+    "./template/**/*.{js,jsx,ts,tsx}",
     "./components/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
       colors: {
         primary: "#04203D"
+      },
+      fontFamily: {
+        'poppins': 'poppins-regular',
+        'poppins-semibold': 'poppins-semibold',
+        'poppins-bold': 'poppins-bold',
       }
     },
   },

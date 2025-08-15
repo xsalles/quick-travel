@@ -10,7 +10,7 @@ export default function Index() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      router.replace("/screens/onBoarding/first")
+      router.replace("/screens/OnBoarding/first")
     }, 3000)
 
     return () => clearTimeout(timer)

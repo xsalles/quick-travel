@@ -1,10 +1,11 @@
-import { ReactNode } from "react";
+import { FC, ReactNode } from "react";
+import { SvgProps } from "react-native-svg";
 
 export interface OnBoardingProps {
-    image: ReactNode;
-    title: string;
-    description: string;
-    buttonText: 'Próximo' | 'Começar';
-    lineDirection?: 'left' | 'center' | 'right';
-    buttonAction?: () => void;
+  image: FC<SvgProps> | ReactNode;
+  title: string;
+  description: string;
+  buttonText: "Próximo" | "Começar";
+  lineDirection?: "left" | "center" | "right";
+  buttonAction?: () => void;
 }
