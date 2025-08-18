@@ -34,7 +34,17 @@ export default function FirstOnBoarding() {
       prevLabel="Voltar"
       showPrevButton={true}
       nextLabel="Próximo"
-      renderPrevButton={() => <Button fontVariant="regular" sizeVariant="fit" action={goToPrevious} colorVariant="transparent" text="Voltar"/>}
+      renderPrevButton={() =>
+        sliderRef.current?.state.activeIndex === 1 ? (
+          <Button
+            fontVariant="regular"
+            sizeVariant="fit"
+            action={goToPrevious}
+            colorVariant="transparent"
+            text="Voltar"
+          />
+        ) : null
+      }
       dotStyle={{
         backgroundColor: "#C4C4C4",
         width: 20,
