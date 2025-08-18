@@ -45,7 +45,7 @@ export default function OnBoardingPage({ ...props }: OnBoardingProps) {
           {props.description}
         </Text>
 
-        <Button text={props.buttonText} action={() => props.buttonAction} colorVariant="secondary" />
+        <Button fontVariant="default" sizeVariant="default" text={props.buttonText} action={props.buttonAction} colorVariant="secondary" />
 
         
       </View>
