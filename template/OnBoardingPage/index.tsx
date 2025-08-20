@@ -37,7 +37,7 @@ export default function OnBoardingPage({ ...props }: OnBoardingProps) {
         </View>
       </View>
 
-      <View className="flex-col min-h-[300px] px-12 w-full gap-6 items-center bg-black rounded-t-2xl py-8">
+      <View className="flex-col min-h-[300px] px-12 w-full gap-6 items-center bg-black rounded-t-2xl py-20">
         <Text className="text-white text-2xl font-poppins-semibold text-center">
           {props.title}
         </Text>

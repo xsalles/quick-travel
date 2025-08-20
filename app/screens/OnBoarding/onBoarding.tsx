@@ -29,13 +29,13 @@ export default function FirstOnBoarding() {
         width: 20,
         height: 20,
         borderRadius: 999,
-        marginBottom: 82,
+        marginBottom: 530,
       }}
       prevLabel="Voltar"
       showPrevButton={true}
       nextLabel="Próximo"
       renderPrevButton={() =>
-        sliderRef.current?.state.activeIndex === 1 ? (
+        sliderRef.current?.state.activeIndex === 1 || 2 ? (
           <Button
             fontVariant="regular"
             sizeVariant="fit"
@@ -50,7 +50,7 @@ export default function FirstOnBoarding() {
         width: 20,
         height: 20,
         borderRadius: 999,
-        marginBottom: 82,
+        marginBottom: 530,
       }}
     />
   );
