@@ -9,7 +9,7 @@ export type FontVariant = keyof typeof variants.font;
 const variants = {
     size: {
         default: 'h-12 w-full text-center flex items-center justify-center rounded-2xl',
-        fit: "h-fit w-fit ml-[62%] mt-[8px]"
+        fit: "h-fit w-fit ml-[62%]"
     },
     colors: {
         primary: 'bg-primary text-white',

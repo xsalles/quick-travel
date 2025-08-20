@@ -3,8 +3,9 @@ import OnBoardingPage from "@/template/OnBoardingPage";
 import { onBoardingData } from "./data";
 import AppIntroSlider from "react-native-app-intro-slider";
 import Button from "@/components/Button";
+import { router } from "expo-router";
 
-export default function FirstOnBoarding() {
+export default function OnBoarding() {
   const sliderRef = useRef<AppIntroSlider>(null);
 
   const goToNext = () => {
@@ -15,12 +16,16 @@ export default function FirstOnBoarding() {
     sliderRef.current?.goToSlide(sliderRef.current.state.activeIndex - 1);
   };
 
+  const goToSignIn = () => {
+    router.replace("/screens/Auth/SignIn/signIn");
+  }
+
   return (
     <AppIntroSlider
       ref={sliderRef}
       data={onBoardingData}
-      renderItem={({ item }) => (
-        <OnBoardingPage {...item} buttonAction={goToNext} />
+      renderItem={({ item, index }) => (
+        <OnBoardingPage {...item} buttonAction={index < onBoardingData.length - 1  ? goToNext : goToSignIn} />
       )}
       showDoneButton={false}
       showNextButton={false}
