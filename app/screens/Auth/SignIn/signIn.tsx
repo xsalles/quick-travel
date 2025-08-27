@@ -12,6 +12,10 @@ export default function SignIn() {
          router.replace("/screens/Auth/SignUp/signUp")
     }
 
+    const goToModal = () => {
+         router.replace("/screens/Auth/Teste/teste")
+    }
+
   return (
     <SafeAreaView className="flex-1 flex-col items-center bg-white">
       <View className="flex items-center justify-center w-full h-fit p-4 rounded-br-[64px] bg-primary">
@@ -37,6 +41,7 @@ export default function SignIn() {
             fontVariant="default"
             sizeVariant="default"
             text="Entrar"
+            action={goToModal}
           />
 
           <View className="flex flex-row items-center justify-center gap-2 mt-4">
